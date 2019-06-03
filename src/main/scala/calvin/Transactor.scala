@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentLinkedQueue
 import scala.collection.concurrent.TrieMap
 import scala.concurrent.{ExecutionContext, Future}
 
-class Sequencer(val id: String)(implicit ec: ExecutionContext) {
+class Transactor(val id: String)(implicit ec: ExecutionContext) {
 
   val batch = new ConcurrentLinkedQueue[Transaction]()
   var running = TrieMap[String, Transaction]()

@@ -24,7 +24,7 @@ class MainSpec extends FlatSpec {
 
     for(i<-0 until ns){
       val id = i.toString
-      sequencers.put(id, new Sequencer(id))
+      sequencers.put(id, new Transactor(id))
     }
 
     val n = 100

@@ -18,6 +18,6 @@ package object calvin {
   }
 
   val transactions = TrieMap[String, Transaction]()
-  val sequencers = TrieMap[String, Sequencer]()
+  val sequencers = TrieMap[String, Transactor]()
 
 }
