@@ -27,10 +27,11 @@ class MainSpec extends FlatSpec {
       sequencers.put(id, new Sequencer(id))
     }
 
-    val n = 10
+    val n = 20
 
     for(i<-0 until n){
       val id = UUID.randomUUID.toString
+      //val id = i.toString
       val balance = rand.nextInt(0, 1000)
       val account = new Account(id, balance)
 
@@ -50,7 +51,7 @@ class MainSpec extends FlatSpec {
       val tmp = System.currentTimeMillis()
 
       keys.foreach { k =>
-        val s = (sequencers.computeHash(k) % ns).abs.toString
+        val s = (sequencers.computeHash(k).abs & (ns - 1)).toString
 
         requests.get(k) match {
           case None => requests = requests + (s -> Transaction(id, Seq(k), tmp))
@@ -93,7 +94,7 @@ class MainSpec extends FlatSpec {
     }
 
     val start = System.currentTimeMillis()
-    val results = Await.result(Future.sequence(tasks), 5 seconds)
+    val results = Await.result(Future.sequence(tasks), 10 seconds)
     val elapsed = System.currentTimeMillis() - start
 
     val size = results.length
