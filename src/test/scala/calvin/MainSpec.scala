@@ -74,7 +74,7 @@ class MainSpec extends FlatSpec {
 
       Future.firstCompletedOf(Seq(Future.sequence(locks), ptmt.future)).map { acks =>
         if(!acks.contains(false)) {
-          Thread.sleep(ThreadLocalRandom.current().nextLong(20L, 50L))
+          latency()
           true
         } else {
           false

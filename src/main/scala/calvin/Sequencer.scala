@@ -31,6 +31,9 @@ class Sequencer(val id: String)(implicit ec: ExecutionContext) {
 
       var keys = running.map(_._2.keys).flatten.toSeq
 
+      // Latency to save jobs executing...
+      latency()
+
       txs.sortBy(_.id).foreach { t =>
         val elapsed = now - t.tmp
 
@@ -51,6 +54,8 @@ class Sequencer(val id: String)(implicit ec: ExecutionContext) {
 
   def offer(t: Transaction): Future[Boolean] = {
 
+    latency()
+
     if(batch.size() < 10000){
       batch.add(t)
 
@@ -63,6 +68,9 @@ class Sequencer(val id: String)(implicit ec: ExecutionContext) {
   }
 
   def release(id: String): Future[Boolean] = Future {
+
+    latency()
+
     running.remove(id)
     true
   }
