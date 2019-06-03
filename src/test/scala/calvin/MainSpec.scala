@@ -1,13 +1,13 @@
 package calvin
 
-import java.util.UUID
+import java.util.{Timer, TimerTask, UUID}
 import java.util.concurrent.ThreadLocalRandom
 
 import org.scalatest.FlatSpec
 
 import scala.collection.concurrent.TrieMap
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{Await, Future}
+import scala.concurrent.{Await, Future, Promise, TimeoutException}
 import scala.concurrent.duration._
 
 class MainSpec extends FlatSpec {
@@ -20,14 +20,14 @@ class MainSpec extends FlatSpec {
 
     var accounts = Seq.empty[Account]
 
-    val ns = 100
+    val ns = 20
 
     for(i<-0 until ns){
       val id = i.toString
       sequencers.put(id, new Sequencer(id))
     }
 
-    val n = 20
+    val n = 100
 
     for(i<-0 until n){
       val id = UUID.randomUUID.toString
@@ -59,23 +59,36 @@ class MainSpec extends FlatSpec {
         }
       }
 
+      val ptmt = Promise[Seq[Boolean]]()
+      val timer = new Timer()
+
       val locks = requests.map{case (s, t) => sequencers(s).offer(t)}.toSeq
 
+      timer.schedule(new TimerTask {
+        override def run(): Unit = {
+          ptmt.failure(new TimeoutException())
+        }
+      }, TIMEOUT)
+
       val start = System.currentTimeMillis()
-      Future.sequence(locks).map { acks =>
+
+      Future.firstCompletedOf(Seq(Future.sequence(locks), ptmt.future)).map { acks =>
         if(!acks.contains(false)) {
           Thread.sleep(ThreadLocalRandom.current().nextLong(20L, 50L))
           true
         } else {
           false
         }
+      }.recover {case _ =>
+        false
       }.map { ok =>
+
+        val elapsed = System.currentTimeMillis() - start
 
         requests.foreach { case (p, _) =>
           sequencers(p).release(id)
         }
 
-        val elapsed = System.currentTimeMillis() - start
         println(s"tx ${id} done -> ${ok} elapsed: ${elapsed}ms")
 
         ok
