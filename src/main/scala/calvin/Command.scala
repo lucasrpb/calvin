@@ -1,0 +1,3 @@
+package calvin
+
+trait Command

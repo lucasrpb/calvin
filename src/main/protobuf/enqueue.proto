@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  scope: FILE
+  package_name: "calvin.protocol"
+  flat_package: true
+};
+
+message Enqueue {
+    option (scalapb.message).extends = "calvin.Command";
+    option (scalapb.message).companion_extends = "calvin.Command";
+
+    string id = 1;
+    repeated string keys = 2;
+}

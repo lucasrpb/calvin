@@ -1,2 +1,9 @@
-[0m[[0m[33mwarn[0m] [0m[0mthere was one feature warning; re-run with -feature for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Users\resta\IdeaProjects\calvin\src\test\scala\calvin\SerializationSpec.scala:24:42: inferred type arguments [calvin.protocol.Enqueue] do not conform to method getDefaultInstance's type parameter bounds [T <: com.google.protobuf.MessageLite][0m
+[0m[[0m[31merror[0m] [0m[0m    val i = com.google.protobuf.Internal.getDefaultInstance(classOf[Enqueue])[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0mD:\Users\resta\IdeaProjects\calvin\src\test\scala\calvin\SerializationSpec.scala:24:68: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Class[calvin.protocol.Enqueue](classOf[calvin.protocol.Enqueue])[0m
+[0m[[0m[31merror[0m] [0m[0m required: Class[T][0m
+[0m[[0m[31merror[0m] [0m[0m    val i = com.google.protobuf.Internal.getDefaultInstance(classOf[Enqueue])[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

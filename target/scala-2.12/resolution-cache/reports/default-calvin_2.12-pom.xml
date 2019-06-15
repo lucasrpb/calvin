@@ -6,8 +6,8 @@
 		module="calvin_2.12"
 		revision="0.1"
 		conf="pom"
-		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190615114049"/>
+		confs="compile, runtime, test, provided, optional, protobuf, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20190615133141"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+
+option (scalapb.options) = {
+  scope: FILE
+  package_name: "calvin.protocol"
+  flat_package: true
+};
+
+message Release {
+    option (scalapb.message).extends = "calvin.Command";
+    option (scalapb.message).companion_extends = "calvin.Command";
+
+    string id = 1;
+}
