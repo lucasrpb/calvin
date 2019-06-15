@@ -32,6 +32,8 @@ package object calvin {
   final class CommandDecoder extends MessageToMessageDecoder[ByteBuf] {
     override def decode(ctx: ChannelHandlerContext, msg: ByteBuf, out: util.List[AnyRef]): Unit = {
 
+
+
     }
   }
 

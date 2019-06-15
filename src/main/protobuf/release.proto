@@ -14,3 +14,7 @@ message Release {
 
     string id = 1;
 }
+
+message Test {
+    string id = 2;
+}
