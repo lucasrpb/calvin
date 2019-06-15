@@ -4,7 +4,7 @@
 		module="calvin_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20190615133141"
+		publication="20190615160131"
 	>
 		<description>
 		calvin
@@ -42,5 +42,8 @@
 		<dependency org="io.vertx" name="vertx-codegen" rev="3.5.0" conf="provided->default(compile)"/>
 		<dependency org="io.vertx" name="vertx-lang-scala_2.12" rev="3.5.0" conf="compile->default(compile)"/>
 		<dependency org="io.vertx" name="vertx-hazelcast" rev="3.5.0" conf="compile->default(compile)"/>
+		<dependency org="com.twitter" name="finagle-http_2.12" rev="19.5.1" conf="compile->default(compile)"/>
+		<dependency org="com.twitter" name="finagle-core_2.12" rev="19.5.1" conf="compile->default(compile)"/>
+		<dependency org="io.netty" name="netty-all" rev="4.1.35.Final" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

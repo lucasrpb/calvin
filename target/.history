@@ -9,3 +9,17 @@ compile
 test
 compile
 testOnly calvin.SerializationSpec
+compile
+testOnly calvin.SerializationSpec
+runMain calvin.Client
+runMain calvin.Client 2551
+test
+runMain calvin.Client 2551
+runMain calvin.Server 2551
+runMain calvin.Client 2551
+runMain calvin.Server 2551
+runMain calvin.Client 2551
+runMain calvin.Server 2551
+runMain calvin.Client 2551
+runMain calvin.Server 2551
+runMain calvin.Client 2551
