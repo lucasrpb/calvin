@@ -61,8 +61,8 @@ package object calvin {
       val p = Any.parseFrom(bytes)
 
       p match {
-        case _ if p.is(Enqueue) => out.add(Enqueue.parseFrom(bytes))
-        case _ if p.is(Release) => out.add(Release.parseFrom(bytes))
+        case _ if p.is(Enqueue) => out.add(p.unpack(Enqueue))
+        case _ if p.is(Release) => out.add(p.unpack(Release))
         case _ =>
       }
 
