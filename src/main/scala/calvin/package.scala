@@ -9,6 +9,7 @@ package object calvin {
 
   trait Command
 
+
   case class Transaction(id: String, var keys: Seq[String], var tmp: Long){
     val p = Promise[Boolean]()
   }

@@ -16,7 +16,7 @@
 [debug] == resolving dependencies default#calvin$sources;0.1->com.google.j2objc#j2objc-annotations;1.1 [compile->compile(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->com.google.j2objc#j2objc-annotations;1.1 [compile->master]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [compile->default]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.8 {compile=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], scala-tool=[default, compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master]}
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.8 {compile=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], scala-tool=[default, master(*), compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.12.8
 [debug] 	found org.scala-lang#scala-library;2.12.8 in sbt-chain
 [debug] 	[2.12.8] org.scala-lang#scala-library;2.12.8
@@ -394,6 +394,7 @@
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [compile->master(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
@@ -617,6 +618,7 @@
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->runtime]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->master]
+[debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->master(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->runtime(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->compile]
@@ -1527,6 +1529,7 @@
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->runtime]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->master]
+[debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->master(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->runtime(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test->compile]
@@ -1661,6 +1664,7 @@
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->runtime]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->master]
+[debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->master(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->runtime(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [test-internal->compile]
@@ -1779,6 +1783,7 @@
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->runtime]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->master]
+[debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->master(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->compile]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->runtime(*)]
 [debug] == resolving dependencies default#calvin$sources;0.1->org.scala-lang#scala-library;2.12.8 [scala-tool->compile]
@@ -1830,28 +1835,28 @@
 [debug] 	[NOT REQUIRED] com.google.j2objc#j2objc-annotations;1.1!j2objc-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar(src)
 [debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.codehaus.mojo#animal-sniffer-annotations;1.17!animal-sniffer-annotations.jar(src)
-[debug] 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.8.1!commons-lang3.jar(src)
 [debug] 	[NOT REQUIRED] com.google.code.findbugs#jsr305;3.0.2!jsr305.jar(src)
+[debug] 	[NOT REQUIRED] org.codehaus.mojo#animal-sniffer-annotations;1.17!animal-sniffer-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.checkerframework#checker-qual;2.5.2!checker-qual.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar(src)
 [debug] 	[NOT REQUIRED] com.google.guava#failureaccess;1.0.1!failureaccess.jar(src)
+[debug] 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.8.1!commons-lang3.jar(src)
 [debug] 	[NOT REQUIRED] com.google.guava#guava;27.1-jre!guava.jar(src)
 [debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.5!scalatest_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
 [debug] 	[NOT REQUIRED] com.google.errorprone#error_prone_annotations;2.2.0!error_prone_annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.6!jline.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
-[debug] :: resolution report :: resolve 426ms :: artifacts dl 17ms
-[debug] 	report for default#calvin$sources;0.1 compile produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-compile.xml
-[debug] 	report for default#calvin$sources;0.1 runtime produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-runtime.xml
-[debug] 	report for default#calvin$sources;0.1 test produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-test.xml
-[debug] 	report for default#calvin$sources;0.1 provided produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-provided.xml
-[debug] 	report for default#calvin$sources;0.1 optional produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-optional.xml
-[debug] 	report for default#calvin$sources;0.1 compile-internal produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-compile-internal.xml
-[debug] 	report for default#calvin$sources;0.1 runtime-internal produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-runtime-internal.xml
-[debug] 	report for default#calvin$sources;0.1 test-internal produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-test-internal.xml
-[debug] 	report for default#calvin$sources;0.1 plugin produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-plugin.xml
-[debug] 	report for default#calvin$sources;0.1 pom produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-pom.xml
-[debug] 	report for default#calvin$sources;0.1 scala-tool produced in /Volumes/Users/lucasrpb/IdeaProjects/calvin/target/scala-2.12/resolution-cache/reports/default-calvin$sources-scala-tool.xml
-[debug] 	resolve done (426ms resolve - 17ms download)
+[debug] :: resolution report :: resolve 297ms :: artifacts dl 31ms
+[debug] 	report for default#calvin$sources;0.1 compile produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-compile.xml
+[debug] 	report for default#calvin$sources;0.1 runtime produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-runtime.xml
+[debug] 	report for default#calvin$sources;0.1 test produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-test.xml
+[debug] 	report for default#calvin$sources;0.1 provided produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-provided.xml
+[debug] 	report for default#calvin$sources;0.1 optional produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-optional.xml
+[debug] 	report for default#calvin$sources;0.1 compile-internal produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-compile-internal.xml
+[debug] 	report for default#calvin$sources;0.1 runtime-internal produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-runtime-internal.xml
+[debug] 	report for default#calvin$sources;0.1 test-internal produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-test-internal.xml
+[debug] 	report for default#calvin$sources;0.1 plugin produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-plugin.xml
+[debug] 	report for default#calvin$sources;0.1 pom produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-pom.xml
+[debug] 	report for default#calvin$sources;0.1 scala-tool produced in D:\Users\resta\IdeaProjects\calvin\target\scala-2.12\resolution-cache\reports\default-calvin$sources-scala-tool.xml
+[debug] 	resolve done (297ms resolve - 31ms download)
