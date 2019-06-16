@@ -20,9 +20,10 @@ object Client {
   val rand = ThreadLocalRandom.current()
 
   val mapping = Map(
-    "0" -> 2551,
-    "1" -> 2552
+    "0" -> ("192.168.0.28", 2551),
+    "1" -> ("192.168.0.10", 2552)
   )
+
   val transactors = TrieMap[String, Service[Command, Command]]()
 
   def createConnection(host: String, port: Int): Service[Command, Command] = {
@@ -52,7 +53,8 @@ object Client {
     val n = 2
 
     for(i<-0 until n){
-      transactors.put(i.toString, createConnection("localhost", mapping(i.toString)))
+      val (host, port) = mapping(i.toString)
+      transactors.put(i.toString, createConnection(host, port))
     }
 
     var accounts = Seq.empty[Account]
