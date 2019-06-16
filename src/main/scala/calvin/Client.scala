@@ -88,7 +88,7 @@ object Client {
         //ptimeout.raise(new TimeoutException("whoops!"))
       }
 
-      val locks = Future.traverseSequentially(requests.toSeq){case (p, e) => lock(transactors(p), e)}
+      val locks = Future.collect(requests.map{case (p, e) => lock(transactors(p), e)}.toSeq)
 
       locks.or(ptimeout).map { reads =>
         !reads.exists(_.ok == false)
