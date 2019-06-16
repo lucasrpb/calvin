@@ -13,7 +13,7 @@ object TransactorClient {
 
   val protocolLibrary = "string"
 
-  object NoDelimStringPipeline extends (ChannelPipeline => Unit) {
+  object NullDelimiterPipeline extends (ChannelPipeline => Unit) {
     def apply(pipeline: ChannelPipeline): Unit = {
       // pipeline.addLast("stringEncoder", new StringEncoder(UTF_8))
       // pipeline.addLast("stringDecoder", new StringDecoder(UTF_8))

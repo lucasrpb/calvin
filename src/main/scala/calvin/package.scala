@@ -1,5 +1,3 @@
-import java.nio.CharBuffer
-import java.nio.charset.StandardCharsets.UTF_8
 import java.util
 
 import calvin.protocol._
@@ -27,8 +25,9 @@ package object calvin {
         case cmd: Enqueue => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
         case cmd: Release => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
         case cmd: Response => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
-        case _ => out.add(buf)
       }
+
+      buf.release()
     }
   }
 
@@ -43,7 +42,6 @@ package object calvin {
         case _ if p.is(Enqueue) => out.add(p.unpack(Enqueue))
         case _ if p.is(Release) => out.add(p.unpack(Release))
         case _ if p.is(Response) => out.add(p.unpack(Response))
-        case _ => out.add(null)
       }
 
     }
