@@ -4,7 +4,7 @@
 		module="calvin$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190616104140"
+		publication="20190616202233"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

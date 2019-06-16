@@ -60,7 +60,7 @@ object Client {
     var accounts = Seq.empty[Account]
 
     for(i<-0 until 100){
-      val id = UUID.randomUUID.toString
+      val id = i.toString//UUID.randomUUID.toString
       val balance = rand.nextInt(0, 1000)
 
       val account = Account(id, balance)
@@ -73,7 +73,7 @@ object Client {
       var requests = Map.empty[String, Enqueue]
 
       keys.foreach { k =>
-        val p = (transactors.computeHash(k).abs % n).toString/*(k.toInt % n).toString*/
+        val p = /*(transactors.computeHash(k).abs % n).toString*/(k.toInt % n).toString
 
         requests.get(p) match {
           case Some(e) => e.addKeys(k)
@@ -89,6 +89,8 @@ object Client {
         ptimeout.setValue(Seq(Response(false)))
         //ptimeout.raise(new TimeoutException("whoops!"))
       }
+
+      //println(s"requests ${requests.map(_._1)}")
 
       val locks = Future.collect(requests.map{case (p, e) => lock(transactors(p), e)}.toSeq)
 
