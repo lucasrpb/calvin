@@ -13,7 +13,7 @@ object Client {
 
     val port = args(0)
 
-    val addr = new java.net.InetSocketAddress("127.0.0.1", port.toInt)
+    val addr = new java.net.InetSocketAddress("localhost", port.toInt)
     val transporter = Netty4Transporter.raw[Command, Command](TransactorClient.NoDelimStringPipeline, addr,
       StackClient.defaultParams)
 
@@ -29,7 +29,7 @@ object Client {
     }
 
     val start = System.currentTimeMillis()
-    val r = Await.result(client(Release("hello")))
+    val r = Await.result(client(Enqueue("1", Seq("k1", "k2"))))
     val elapsed = System.currentTimeMillis() - start
 
     println(s"result ${r} elapsed ${elapsed}ms")

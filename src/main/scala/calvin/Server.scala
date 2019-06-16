@@ -1,10 +1,7 @@
 package calvin
 
-import java.net.{InetAddress, InetSocketAddress}
-
-import calvin.protocol.{Enqueue, Release}
-import com.twitter.finagle.Service
-import com.twitter.util.{Await, Future}
+import java.net.InetSocketAddress
+import com.twitter.util.Await
 
 object Server {
 
@@ -12,20 +9,9 @@ object Server {
 
     val port = args(0)
 
-    val service = new Service[Command, Command] {
-      override def apply(request: Command): Future[Command] = {
+    val service = new Transactor()
 
-        request match {
-          case cmd: Enqueue => println("received ", cmd.id)
-          case cmd: Release => println("received ", cmd.id)
-          case _ =>
-        }
-
-        Future.value(Release("world!"))
-      }
-    }
-
-    val server = TransactorServer.Server().serve(new InetSocketAddress(InetAddress.getLoopbackAddress, port.toInt)
+    val server = TransactorServer.Server().serve(new InetSocketAddress("localhost", port.toInt)
       , service)
 
     Await.result(server)

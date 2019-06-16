@@ -8,9 +8,9 @@ option (scalapb.options) = {
   flat_package: true
 };
 
-message Release {
+message Test {
     option (scalapb.message).extends = "calvin.Command";
     option (scalapb.message).companion_extends = "calvin.Command";
-
-    string id = 1;
+    
+    string id = 2;
 }

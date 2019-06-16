@@ -2,20 +2,19 @@ import java.nio.CharBuffer
 import java.nio.charset.StandardCharsets.UTF_8
 import java.util
 
-import calvin.protocol.{Enqueue, Release}
+import calvin.protocol._
 import com.google.protobuf.any.Any
+import com.twitter.util.Promise
 import io.netty.buffer.{ByteBuf, ByteBufUtil}
 import io.netty.channel.ChannelHandlerContext
 import io.netty.handler.codec.{MessageToMessageDecoder, MessageToMessageEncoder}
 
-import scala.concurrent.Promise
-
 package object calvin {
 
-  val TIMEOUT = 700L
+  val TIMEOUT = 400L
 
   case class Transaction(id: String, var keys: Seq[String], var tmp: Long){
-    val p = Promise[Boolean]()
+    val p = Promise[Response]()
   }
 
   final class CommandEncoder extends MessageToMessageEncoder[Command] {
@@ -24,22 +23,11 @@ package object calvin {
       val buf = ctx.alloc().buffer().retain()
 
       msg match {
-        case cmd: Enqueue =>
-
-          //val packed = Any.pack(cmd).toByteString
-          //out.add(ByteBufUtil.encodeString(ctx.alloc, CharBuffer.wrap(packed.toStringUtf8), UTF_8))
-
-          out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
-
-        case cmd: Release =>
-
-         // val packed = Any.pack(cmd).toByteString
-         // println("result: ", Enqueue.parseFrom(packed.toStringUtf8.getBytes))
-
-          //out.add(ByteBufUtil.encodeString(ctx.alloc, CharBuffer.wrap(packed.toStringUtf8), UTF_8))
-
-          out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
-        case _ =>
+        case cmd: Test => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
+        case cmd: Enqueue => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
+        case cmd: Release => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
+        case cmd: Response => out.add(buf.writeBytes(Any.pack(cmd).toByteArray))
+        case _ => out.add(buf)
       }
     }
   }
@@ -47,23 +35,15 @@ package object calvin {
   final class CommandDecoder extends MessageToMessageDecoder[ByteBuf] {
     override def decode(ctx: ChannelHandlerContext, msg: ByteBuf, out: util.List[AnyRef]): Unit = {
 
-      /*val str = msg.toString(UTF_8)
-
-      val p = Any.parseFrom(str.getBytes)
-
-      p match {
-        case _ if p.is(Enqueue) => out.add(Enqueue.parseFrom(str.getBytes))
-        case _ if p.is(Release) => out.add(Release.parseFrom(str.getBytes))
-        case _ =>
-      }*/
-
       val bytes = ByteBufUtil.getBytes(msg).array
       val p = Any.parseFrom(bytes)
 
       p match {
+        case _ if p.is(Test) => out.add(p.unpack(Test))
         case _ if p.is(Enqueue) => out.add(p.unpack(Enqueue))
         case _ if p.is(Release) => out.add(p.unpack(Release))
-        case _ =>
+        case _ if p.is(Response) => out.add(p.unpack(Response))
+        case _ => out.add(null)
       }
 
     }

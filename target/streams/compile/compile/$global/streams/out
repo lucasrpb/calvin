@@ -1,4 +1,10 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Users\resta\IdeaProjects\calvin\src\main\scala\calvin\package.scala:21:36: not found: type Transactor[0m
-[0m[[0m[31merror[0m] [0m[0m  val sequencers = TrieMap[String, Transactor]()[0m
-[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\lucasrpb\IdeaProjects\calvin\src\main\scala\calvin\Transactor.scala:22:18: value future is not a member of com.twitter.util.Promise[calvin.protocol.Response][0m
+[0m[[0m[31merror[0m] [0m[0m      return t.p.future[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\lucasrpb\IdeaProjects\calvin\src\main\scala\calvin\Transactor.scala:25:9: value success is not a member of com.twitter.util.Promise[calvin.protocol.Response][0m
+[0m[[0m[31merror[0m] [0m[0m    t.p.success(false)[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\lucasrpb\IdeaProjects\calvin\src\main\scala\calvin\Transactor.scala:27:9: value future is not a member of com.twitter.util.Promise[calvin.protocol.Response][0m
+[0m[[0m[31merror[0m] [0m[0m    t.p.future[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
