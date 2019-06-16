@@ -11,7 +11,7 @@ object Server {
 
     val service = new Transactor()
 
-    val server = TransactorServer.Server().serve(new InetSocketAddress("localhost", port.toInt)
+    val server = TransactorServer.Server().serve(new InetSocketAddress("192.168.0.28", port.toInt)
       , service)
 
     Await.result(server)
