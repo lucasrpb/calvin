@@ -88,7 +88,7 @@ object Client {
 
       val locks = Future.collect(requests.map{case (p, e) => lock(transactors(p), e)}.toSeq)
 
-      locks.within(Duration.fromMilliseconds(10)).map { reads =>
+      locks.within(Duration.fromMilliseconds(TIMEOUT)).map { reads =>
         !reads.exists(_.ok == false)
       }.handle { case e: Throwable =>
         println(s"exception ${e}")
