@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5445886-4724-4a36-9b77-ffb893d9f525" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/scala/calvin/Client.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/calvin/Client.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/calvin/Server.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/calvin/Server.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/calvin/package.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/calvin/package.scala" afterDir="false" />
-    </list>
+    <list default="true" id="b5445886-4724-4a36-9b77-ffb893d9f525" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -29,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/calvin/Client.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="89" column="6" lean-forward="true" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+            <state relative-caret-position="137">
+              <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -317,7 +313,7 @@
       <workItem from="1560609622300" duration="1228000" />
       <workItem from="1560610873035" duration="20930000" />
       <workItem from="1560692472283" duration="11902000" />
-      <workItem from="1560727326723" duration="5513000" />
+      <workItem from="1560727326723" duration="5555000" />
     </task>
     <task id="LOCAL-00001" summary="Remote version for testing...">
       <created>1560610198403</created>
@@ -410,17 +406,24 @@
       <option name="project" value="LOCAL" />
       <updated>1560727554007</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Implementing distributed Calvin...">
+      <created>1560733811175</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1560733811175</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41863000" />
+    <option name="totallyTimeSpent" value="41905000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -440,7 +443,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.39934534" />
-      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49924356" weight="0.32733223" />
+      <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.49924356" weight="0.32569557" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -808,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/calvin/Client.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="89" column="6" lean-forward="true" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+        <state relative-caret-position="137">
+          <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
         </state>
       </provider>
     </entry>
