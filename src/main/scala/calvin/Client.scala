@@ -20,8 +20,8 @@ object Client {
   val rand = ThreadLocalRandom.current()
 
   val mapping = Map(
-    "0" -> ("192.168.0.28", 2551),
-    "1" -> ("192.168.0.10", 2552)
+    "0" -> ("localhost", 2551),
+    "1" -> ("localhost", 2552)
   )
 
   val transactors = TrieMap[String, Service[Command, Command]]()
@@ -84,17 +84,11 @@ object Client {
       val start = System.currentTimeMillis()
       implicit val timer = new JavaTimer()
 
-      val ptimeout = new Promise[Seq[Response]]()
-      timer.schedule(Duration.fromMilliseconds(TIMEOUT)){
-        ptimeout.setValue(Seq(Response(false)))
-        //ptimeout.raise(new TimeoutException("whoops!"))
-      }
-
       //println(s"requests ${requests.map(_._1)}")
 
       val locks = Future.collect(requests.map{case (p, e) => lock(transactors(p), e)}.toSeq)
 
-      locks.or(ptimeout).map { reads =>
+      locks.within(Duration.fromMilliseconds(10)).map { reads =>
         !reads.exists(_.ok == false)
       }.handle { case e: Throwable =>
         println(s"exception ${e}")

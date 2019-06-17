@@ -9,7 +9,7 @@ import io.netty.handler.codec.{MessageToMessageDecoder, MessageToMessageEncoder}
 
 package object calvin {
 
-  val TIMEOUT = 400L
+  val TIMEOUT = 20L
 
   case class Transaction(id: String, var keys: Seq[String], var tmp: Long){
     val p = Promise[Response]()
